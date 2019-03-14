@@ -7,7 +7,9 @@
  */
 public enum Shape
 {
-	THIMBLE, BOOT, RACECAR;
+	THIMBLE, 
+	BOOT, 
+	RACECAR;
 	
 	/**
 	 * Gives the name of the value of the enum object, in lowercase.
