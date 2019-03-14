@@ -13,9 +13,12 @@ Tasks:
 5. Shape enum
 6. Location enum
 7. GamePiece enum
-8. 
-9. 
-10. 
+8. BG constructor
+9. BG addPlayer method
+10. BG move methods
+11. BG get methods return ArrayLists
+12. BG get methods return Sets
+13. 
 
 Estimated Time (minutes):
 1. 7
