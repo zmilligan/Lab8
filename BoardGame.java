@@ -29,7 +29,8 @@ public class BoardGame
 	 */
 	public BoardGame()
 	{
-		//TODO: Finish method
+		playerPieces = new LinkedHashMap<String, GamePiece>();
+		playerLocations = new  LinkedHashMap<String, Location>();
 	}
 	
 	/**
