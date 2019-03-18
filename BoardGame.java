@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -93,7 +94,7 @@ public class BoardGame
 	 */
 	public void movePlayer(String playerName, Location newLocation)
 	{
-		playerLocations.put(playerName,  newLocation);
+		playerLocations.put(playerName, newLocation);
 	}
 	
 	/**
@@ -133,8 +134,7 @@ public class BoardGame
 	 */
 	public Location getPlayersLocation(String player)
 	{
-		//TODO: Finish method
-		return null;
+		return playerLocations.get(player);
 	}
 	
 	/**
@@ -145,8 +145,15 @@ public class BoardGame
 	 */
 	public ArrayList<String> getPlayersAtLocation(Location loc)
 	{
-		//TODO: Finish method
-		return null;
+		ArrayList<String> info = new ArrayList<String>();
+		for(Map.Entry element: playerLocations.entrySet())
+		{
+			if(element.getValue().equals(loc))
+			{
+				info.add((String)element.getKey());
+			}
+		}
+		return info;
 	}
 	
 	/**
