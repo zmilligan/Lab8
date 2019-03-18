@@ -50,7 +50,7 @@ public class BoardGame
 	 */
 	public boolean addPlayer(String playerName, GamePiece gamePiece, Location initialLocation)
 	{
-		if(!playerPieces.containsKey(playerName))
+		if(!playerPieces.containsValue(gamePiece))
 		{
 			playerPieces.put(playerName, gamePiece);
 			playerLocations.put(playerName, initialLocation);
@@ -68,8 +68,7 @@ public class BoardGame
 	 */
 	public GamePiece getPlayerGamePiece(String playerName)
 	{
-		//TODO: Finish method
-		return null;
+		return playerPieces.get(playerName);
 	}
 	
 	/**
@@ -77,11 +76,14 @@ public class BoardGame
 	 * and are assigned to a unique player (i.e. it is a one-to-one relationship).
 	 * 
 	 * @param gamePiece The game piece for which we want to find an associated player.
-	 * @return If a player is correlated with the game piece, return that player name.Else, return null.
+	 * @return If a player is correlated with the game piece, return that player name. Else, return null.
 	 */
 	public String getPlayerWithGamePiece(GamePiece gamePiece)
 	{
-		//TODO: Finish method
+		if(playerPieces.containsValue(gamePiece))
+		{
+			
+		}
 		return null;
 	}
 	
