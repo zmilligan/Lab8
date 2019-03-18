@@ -93,8 +93,7 @@ public class BoardGame
 	 */
 	public void movePlayer(String playerName, Location newLocation)
 	{
-		//TODO: Finish method
-		
+		playerLocations.put(playerName,  newLocation);
 	}
 	
 	/**
@@ -112,8 +111,18 @@ public class BoardGame
 	 */
 	public String[] moveTwoPlayers(String[] playerNames, Location[] newLocations)
 	{
-		//TODO: Finish method
-		return null;
+		int first = 0;
+		int second = 1;
+		
+		if(playerPieces.get(playerNames[1]).equals(GamePiece.movesFirst(playerPieces.get(playerNames[1]), playerPieces.get(playerNames[0]))))
+		{
+			first = 1;
+			second = 0;
+		}
+		else
+		movePlayer(playerNames[first], newLocations[first]);
+		movePlayer(playerNames[second], newLocations[second]);
+		return new String[] {playerNames[first], playerNames[second]};
 	}
 	
 	/**
