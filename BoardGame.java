@@ -82,7 +82,13 @@ public class BoardGame
 	{
 		if(playerPieces.containsValue(gamePiece))
 		{
-			
+			for(Map.Entry<String, GamePiece> element: playerPieces.entrySet())
+			{
+				if(element.getValue().equals(gamePiece))
+				{
+					return (String)element.getKey();
+				}
+			}
 		}
 		return null;
 	}
@@ -148,7 +154,7 @@ public class BoardGame
 	public ArrayList<String> getPlayersAtLocation(Location loc)
 	{
 		ArrayList<String> info = new ArrayList<String>();
-		for(Map.Entry element: playerLocations.entrySet())
+		for(Map.Entry<String, Location> element: playerLocations.entrySet())
 		{
 			if(element.getValue().equals(loc))
 			{
