@@ -18,7 +18,7 @@ Tasks:
 10. BG move methods
 11. BG get methods return ArrayLists
 12. BG get methods return Sets
-13. 
+13. BG get individual methods
 
 Estimated Time (minutes):
 1. 7
@@ -33,7 +33,7 @@ Estimated Time (minutes):
 10. 7
 11. 10
 12. 15
-13. 
+13. 7
 
 Actual Time (minutes):
 1. 7
@@ -44,9 +44,9 @@ Actual Time (minutes):
 6. 2
 7. 6
 8. 2
-9. 
-10. 
-11. 
-12. 
-13. 
+9. 3
+10. 14
+11. 12
+12. 7
+13. 11
 */}
