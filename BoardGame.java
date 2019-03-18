@@ -180,8 +180,7 @@ public class BoardGame
 	 */
 	public Set<String> getPlayers()
 	{
-		//TODO: Finish method
-		return null;
+		return playerPieces.keySet();
 	}
 	
 	/**
@@ -193,8 +192,8 @@ public class BoardGame
 	 */
 	public Set<Location> getPlayerLocations()
 	{
-		//TODO: Finish method
-		return null;
+		Set<Location> locs = (Set<Location>) playerLocations.values();
+		return locs;
 	}
 	
 	/**
@@ -205,7 +204,7 @@ public class BoardGame
 	 */
 	public Set<GamePiece> getPlayerPieces()
 	{
-		//TODO: Finish method
-		return null;
+		Set<GamePiece> pieces = (Set<GamePiece>) playerPieces.values();
+		return pieces;
 	}
 }
