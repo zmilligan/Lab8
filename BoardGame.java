@@ -164,8 +164,13 @@ public class BoardGame
 	 */
 	public ArrayList<GamePiece> getGamePiecesAtLocation(Location loc)
 	{
-		//TODO: Finish method
-		return null;
+		ArrayList<String> names = getPlayersAtLocation(loc);
+		ArrayList<GamePiece> info = new ArrayList<GamePiece>();
+		for(String name : names)
+		{
+			info.add(playerPieces.get(name));
+		}
+		return info;
 	}
 	
 	/**
