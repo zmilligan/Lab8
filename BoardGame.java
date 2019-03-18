@@ -192,8 +192,7 @@ public class BoardGame
 	 */
 	public Set<Location> getPlayerLocations()
 	{
-		Set<Location> locs = (Set<Location>) playerLocations.values();
-		return locs;
+		return (Set<Location>) playerLocations.values();
 	}
 	
 	/**
@@ -204,7 +203,6 @@ public class BoardGame
 	 */
 	public Set<GamePiece> getPlayerPieces()
 	{
-		Set<GamePiece> pieces = (Set<GamePiece>) playerPieces.values();
-		return pieces;
+		return (Set<GamePiece>) playerPieces.values();
 	}
 }
