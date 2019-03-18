@@ -44,12 +44,17 @@ public class BoardGame
 	 * 
 	 * @param playerName The name of the player to be added. Players are referenced only by their names.
 	 * @param gamePiece The game piece to be associated with the player being added.
-	 * @param intialLocation The initial location of the game piece in the board game.
+	 * @param initialLocation The initial location of the game piece in the board game.
 	 * @return false if there already is a player associated with the game piece.
 	 */
-	public boolean addPlayer(String playerName, GamePiece gamePiece, Location intialLocation)
+	public boolean addPlayer(String playerName, GamePiece gamePiece, Location initialLocation)
 	{
-		//TODO: Finish method
+		if(!playerPieces.containsKey(playerName))
+		{
+			playerPieces.put(playerName, gamePiece);
+			playerLocations.put(playerName, initialLocation);
+			return true;
+		}
 		return false;
 	}
 	
