@@ -123,7 +123,7 @@ public class Driver
 	}
 	
 	/**
-	 * Tests for the BoardGame class
+	 * Tests for the BoardGame class methods that do not return Sets
 	 */
 	@Test
 	public void testBoardGame()
@@ -180,7 +180,14 @@ public class Driver
 		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", false, inKitchen2.contains(GamePiece.MAGENTA_RACER));
 		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, inBallroom.isEmpty());
 		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, inConservatory.isEmpty());
-		
+	}
+	
+	/**
+	 * Tests for the BoardGame class methods that return sets
+	 */
+	@Test
+	public void testBoardGameSets()
+	{
 		//getPlayers method
 		//first.addPlayer("Zandi", GamePiece.GREEN_BOOT, Location.HALL);
 		Set<String> players = first.getPlayers();
@@ -189,8 +196,6 @@ public class Driver
 		//players.remove("Zandi");
 		//Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", false, players.contains("Zandi"));
 		
-		}
-	
-	
+	}
 	
 }
