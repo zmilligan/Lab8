@@ -70,4 +70,17 @@ public class Driver
 	Assert.assertEquals("Location enum value incorrect.", Location.LIBRARY, Location.valueOf("LIBRARY"));
 	Assert.assertEquals("Location enum value incorrect.", Location.STUDY, Location.valueOf("STUDY"));
 	}
+
+	/**
+	 * Tests for the Shape Enum
+	 */
+	@Test
+	public void testShapes()
+	{
+		Assert.assertEquals("Shape toString incorrect.", "thimble", Shape.THIMBLE.toString());
+		Assert.assertEquals("Shape toString incorrect.", "boot", Shape.BOOT.toString());
+		Assert.assertEquals("Shape toString incorrect.", "racecar", Shape.RACECAR.toString());
+	}
+	
+	
 }
