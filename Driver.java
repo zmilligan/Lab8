@@ -1,7 +1,5 @@
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import org.junit.Assert;
 
 /**
@@ -184,7 +182,12 @@ public class Driver
 		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, inConservatory.isEmpty());
 		
 		//getPlayers method
-		
+		//first.addPlayer("Zandi", GamePiece.GREEN_BOOT, Location.HALL);
+		Set<String> players = first.getPlayers();
+		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, players.contains("Megan"));
+		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, players.contains("Zandi"));
+		//players.remove("Zandi");
+		//Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", false, players.contains("Zandi"));
 		
 		}
 	
