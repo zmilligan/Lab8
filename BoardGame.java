@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -80,17 +81,18 @@ public class BoardGame
 	 */
 	public String getPlayerWithGamePiece(GamePiece gamePiece)
 	{
+		String name = null;
 		if(playerPieces.containsValue(gamePiece))
 		{
 			for(Map.Entry<String, GamePiece> element: playerPieces.entrySet())
 			{
 				if(element.getValue().equals(gamePiece))
 				{
-					return (String)element.getKey();
+					name = (String)element.getKey();
 				}
 			}
 		}
-		return null;
+		return name;
 	}
 	
 	/**
