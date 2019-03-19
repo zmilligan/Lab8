@@ -65,7 +65,7 @@ public enum GamePiece
 	/**
 	 * Gets information about the game piece.
 	 * 
-	 * @return A string of the format "%s: a %s %s with priority %d", with replacements in order:
+	 * @return A string of the format "%s: a %s %s with priority %d", with replacements in order: 
 	 * (1) The name of the enum constant (e.g. BLUE_RACER)
 	 * (2) The name of the game piece's color
 	 * (3) The name of the game piece's shape
