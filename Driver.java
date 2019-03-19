@@ -5,7 +5,7 @@ import org.junit.Assert;
  * Driver to test the BoardGame and associated classes and Enums.
  * 
  * @author Zandi Milligan
- * @version 2019-03-18
+ * @version 2019-03-19
  *
  */
 public class Driver
@@ -120,5 +120,29 @@ public class Driver
 		Assert.assertEquals("GamePiece movesFirst incorrect.", GamePiece.RED_THIMBLE,
 				GamePiece.movesFirst(GamePiece.RED_THIMBLE, GamePiece.RED_THIMBLE));
 	}
+	
+	/**
+	 * Tests for the BoardGame class
+	 */
+	@Test
+	public void testBoardGame()
+	{
+		//addPlayer method
+		BoardGame first = new BoardGame();
+		Assert.assertEquals("BoardGame addPlayer incorrect", true, first.addPlayer("Zandi", GamePiece.BLUE_BOOT, Location.DINING_ROOM));
+		Assert.assertEquals("BoardGame addPlayer incorrect", true, first.addPlayer("Megan", GamePiece.RED_THIMBLE, Location.HALL));
+		Assert.assertEquals("BoardGame addPlayer incorrect", false, first.addPlayer("David", GamePiece.BLUE_BOOT, Location.CONSERVATORY));
+		
+		//getPlayerGamePiece method
+		Assert.assertEquals("BoardGame getPlayerGamePiece incorrect", GamePiece.BLUE_BOOT, first.getPlayerGamePiece("Zandi"));
+		Assert.assertEquals("BoardGame getPlayerGamePiece incorrect", null, first.getPlayerGamePiece("David"));
+		
+		//getPlayerWithGamePiece method
+		Assert.assertEquals("BoardGame getPlayerWithGamePiece incorrect", "Megan", first.getPlayerWithGamePiece(GamePiece.RED_THIMBLE));
+		Assert.assertEquals("BoardGame getPlayerWithGamePiece incorrect", null, first.getPlayerWithGamePiece(GamePiece.YELLOW_BOOT));
+		
+	}
+	
+	
 	
 }
