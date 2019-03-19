@@ -122,15 +122,17 @@ public class BoardGame
 	 */
 	public String[] moveTwoPlayers(String[] playerNames, Location[] newLocations)
 	{
+		//default indexes if first player moves first
 		int first = 0;
 		int second = 1;
 		
+		//switched indexes if second player moves first
 		if(playerPieces.get(playerNames[1]).equals(GamePiece.movesFirst(playerPieces.get(playerNames[1]), playerPieces.get(playerNames[0]))))
 		{
 			first = 1;
 			second = 0;
 		}
-		else
+		
 		movePlayer(playerNames[first], newLocations[first]);
 		movePlayer(playerNames[second], newLocations[second]);
 		return new String[] {playerNames[first], playerNames[second]};
