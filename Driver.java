@@ -104,5 +104,21 @@ public class Driver
 				GamePiece.YELLOW_BOOT.toString());
 	}
 	
+	/**
+	 * Tests for the GamePiece Enum movesFirst method
+	 */
+	@Test
+	public void testGamePieceMovesFirst()
+	{
+		//Returning the first argument
+		Assert.assertEquals("GamePiece movesFirst incorrect.", GamePiece.RED_RACER,
+				GamePiece.movesFirst(GamePiece.RED_RACER, GamePiece.BLUE_RACER));
+		//Returning the second argument
+		Assert.assertEquals("GamePiece movesFirst incorrect.", GamePiece.BLUE_BOOT,
+				GamePiece.movesFirst(GamePiece.YELLOW_BOOT, GamePiece.BLUE_BOOT));
+		//Arguments are equal
+		Assert.assertEquals("GamePiece movesFirst incorrect.", GamePiece.RED_THIMBLE,
+				GamePiece.movesFirst(GamePiece.RED_THIMBLE, GamePiece.RED_THIMBLE));
+	}
 	
 }
