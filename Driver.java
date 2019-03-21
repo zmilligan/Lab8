@@ -1,5 +1,8 @@
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.Assert;
 
 /**
@@ -128,8 +131,9 @@ public class Driver
 	@Test
 	public void testBoardGame()
 	{
-		//addPlayer method
 		BoardGame first = new BoardGame();
+		
+		//addPlayer method
 		Assert.assertEquals("BoardGame addPlayer incorrect", true, first.addPlayer("Zandi", GamePiece.BLUE_BOOT, Location.DINING_ROOM));
 		Assert.assertEquals("BoardGame addPlayer incorrect", true, first.addPlayer("Megan", GamePiece.RED_THIMBLE, Location.HALL));
 		Assert.assertEquals("BoardGame addPlayer incorrect", false, first.addPlayer("David", GamePiece.BLUE_BOOT, Location.CONSERVATORY));
@@ -188,14 +192,35 @@ public class Driver
 	@Test
 	public void testBoardGameSets()
 	{
-		//getPlayers method
-		//first.addPlayer("Zandi", GamePiece.GREEN_BOOT, Location.HALL);
-		Set<String> players = first.getPlayers();
-		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, players.contains("Megan"));
-		Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", true, players.contains("Zandi"));
-		//players.remove("Zandi");
-		//Assert.assertEquals("BoardGame getGamePiecesAtLocation incorrect", false, players.contains("Zandi"));
+		BoardGame second = new BoardGame();
+		second.addPlayer("David", GamePiece.YELLOW_BOOT, Location.HALL);
+		second.addPlayer("Nathan", GamePiece.BLUE_BOOT, Location.LIBRARY);
 		
+		//getPlayers method
+		second.addPlayer("David", GamePiece.GREEN_BOOT, Location.STUDY);
+		
+		ArrayList<String> players = new ArrayList<String>();
+		for(Object name: second.getPlayers().toArray())
+		{
+			players.add((String)name);
+		}
+		Assert.assertEquals("BoardGame getPlayers incorrect", true, players.contains("Nathan"));
+		Assert.assertEquals("BoardGame getPlayers incorrect", true, players.contains("David"));
+		players.remove("David"); //NOTE: this method removes the FIRST occurrence of the object, to check if David is in here twice
+		Assert.assertEquals("BoardGame getPlayers incorrect", false, players.contains("David"));
+		
+		//getPlayersLocation method
+		//ArrayList<Location> actualLocs = new ArrayList<Location>();
+		//for(Object loc: second.getPlayerLocations().toArray())
+		//{
+		//	actualLocs.add((Location)loc);
+		//}
+		Set<Location> actualLocs = (Set<Location>)second.getPlayerLocations();
+		Location[] expectedLocs = new Location[] {Location.HALL, Location.LIBRARY, Location.STUDY};
+		for(Location exp: expectedLocs)
+		{
+			Assert.assertEquals("BoardGame getPlayerLocations incorrect", true, actualLocs.contains(exp));
+		}
 	}
 	
 }
