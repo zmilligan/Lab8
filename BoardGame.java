@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//import java.util.Iterator;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -204,7 +204,12 @@ public class BoardGame
 	 */
 	public Set<Location> getPlayerLocations()
 	{
-		return (Set<Location>) playerLocations.values();
+		Set<Location> locs = new HashSet<Location>();
+		for(Map.Entry<String, Location> element: playerLocations.entrySet())
+		{
+			locs.add((Location)element.getValue());
+		}
+		return locs;
 	}
 	
 	/**
@@ -215,6 +220,11 @@ public class BoardGame
 	 */
 	public Set<GamePiece> getPlayerPieces()
 	{
-		return (Set<GamePiece>) playerPieces.values();
+		Set<GamePiece> pieces = new HashSet<GamePiece>();
+		for(Map.Entry<String, GamePiece> element: playerPieces.entrySet())
+		{
+			pieces.add((GamePiece)element.getValue());
+		}
+		return pieces;
 	}
 }
