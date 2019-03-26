@@ -9,19 +9,19 @@ public class GamePieceTest
 	@Test
 	public void testGamePieceToString()
 	{
-		Assert.assertEquals("GamePiece toString incorrect.", "RED_RACER: a RED racecar with priority 0",
+		Assert.assertEquals("GamePiece toString incorrect.", "RED_RACER: a RED RACECAR with priority 0",
 				GamePiece.RED_RACER.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "BLUE_RACER: a BLUE racecar with priority 2",
+		Assert.assertEquals("GamePiece toString incorrect.", "BLUE_RACER: a BLUE RACECAR with priority 2",
 				GamePiece.BLUE_RACER.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "MAGENTA_RACER: a MAGENTA racecar with priority 1",
+		Assert.assertEquals("GamePiece toString incorrect.", "MAGENTA_RACER: a MAGENTA RACECAR with priority 1",
 				GamePiece.MAGENTA_RACER.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "RED_THIMBLE: a RED thimble with priority 10",
+		Assert.assertEquals("GamePiece toString incorrect.", "RED_THIMBLE: a RED THIMBLE with priority 10",
 				GamePiece.RED_THIMBLE.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "BLUE_BOOT: a BLUE boot with priority 5",
+		Assert.assertEquals("GamePiece toString incorrect.", "BLUE_BOOT: a BLUE BOOT with priority 5",
 				GamePiece.BLUE_BOOT.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "GREEN_BOOT: a GREEN boot with priority 8",
+		Assert.assertEquals("GamePiece toString incorrect.", "GREEN_BOOT: a GREEN BOOT with priority 8",
 				GamePiece.GREEN_BOOT.toString());
-		Assert.assertEquals("GamePiece toString incorrect.", "YELLOW_BOOT: a YELLOW boot with priority 7",
+		Assert.assertEquals("GamePiece toString incorrect.", "YELLOW_BOOT: a YELLOW BOOT with priority 7",
 				GamePiece.YELLOW_BOOT.toString());
 	}
 
