@@ -24,6 +24,7 @@ Tasks:
 16. Shape tests
 17. GamePiece tests - by extension, also covers GamePieceAppearance class
 18. BoardGame tests
+19. Driver
 
 Estimated Time (minutes):
 1. 7
@@ -44,6 +45,7 @@ Estimated Time (minutes):
 16. 6
 17. 20
 18. 30
+19. 20
 
 Actual Time (minutes):
 1. 7
@@ -63,5 +65,6 @@ Actual Time (minutes):
 15. 5
 16. 3
 17. 13
-18. 
+18. 47
+19. 
 */}
