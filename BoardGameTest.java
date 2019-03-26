@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -75,10 +76,9 @@ public class BoardGameTest
 		BoardGame second = new BoardGame();
 		second.addPlayer("David", GamePiece.YELLOW_BOOT, Location.HALL);
 		second.addPlayer("Nathan", GamePiece.BLUE_BOOT, Location.LIBRARY);
+		second.addPlayer("Sarah", GamePiece.GREEN_BOOT, Location.STUDY);
 		
 		//getPlayers method
-		second.addPlayer("David", GamePiece.GREEN_BOOT, Location.STUDY);
-		
 		ArrayList<String> players = new ArrayList<String>();
 		for(Object name: second.getPlayers().toArray())
 		{
@@ -86,21 +86,28 @@ public class BoardGameTest
 		}
 		Assert.assertEquals("BoardGame getPlayers incorrect", true, players.contains("Nathan"));
 		Assert.assertEquals("BoardGame getPlayers incorrect", true, players.contains("David"));
-		players.remove("David"); //NOTE: this method removes the FIRST occurrence of the object, to check if David is in here twice
-		Assert.assertEquals("BoardGame getPlayers incorrect", false, players.contains("David"));
+		Assert.assertEquals("BoardGame getPlayers incorrect", true, players.contains("Sarah"));
+		Assert.assertEquals("BoardGame getPlayers incorrect", false, players.contains("Zandi"));
 		
-		//getPlayersLocation method
-		//ArrayList<Location> actualLocs = new ArrayList<Location>();
-		//for(Object loc: second.getPlayerLocations().toArray())
-		//{
-		//	actualLocs.add((Location)loc);
-		//}
-		//Set<Location> actualLocs = (Set<Location>)second.getPlayerLocations();
-		//Location[] expectedLocs = new Location[] {Location.HALL, Location.LIBRARY, Location.STUDY};
-		//for(Location exp: expectedLocs)
-		//{
-		//	Assert.assertEquals("BoardGame getPlayerLocations incorrect", true, actualLocs.contains(exp));
-		//}
+		//getPlayerLocations method
+		second.addPlayer("Zandi", GamePiece.MAGENTA_RACER, Location.STUDY);
+		
+		HashSet<Location> actualLocs = (HashSet<Location>)second.getPlayerLocations();
+		Location[] expectedLocs = new Location[] {Location.HALL, Location.LIBRARY, Location.STUDY};
+		for(Location exp: expectedLocs)
+		{
+			Assert.assertEquals("BoardGame getPlayerLocations " + exp.toString() + " incorrect", true, actualLocs.contains(exp));
+		}
+		actualLocs.remove(Location.STUDY); //NOTE: There were two people at the Study. If the Set isn't working, Study will still be here
+		Assert.assertEquals("BoardGame getPlayers incorrect", false, actualLocs.contains(Location.STUDY));
+		
+		//getPlayerPieces method
+		HashSet<GamePiece> actualPieces = (HashSet<GamePiece>)second.getPlayerPieces();
+		GamePiece[] expectedPieces = new GamePiece[] {GamePiece.YELLOW_BOOT, GamePiece.BLUE_BOOT, GamePiece.GREEN_BOOT, GamePiece.MAGENTA_RACER};
+		for(GamePiece exp: expectedPieces)
+		{
+			Assert.assertEquals("BoardGame getPlayerPieces " + exp.toString() + " incorrect", true, actualPieces.contains(exp));
+		}
 	}
 	
 }
